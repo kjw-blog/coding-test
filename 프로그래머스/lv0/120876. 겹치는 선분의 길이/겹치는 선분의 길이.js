@@ -4,13 +4,18 @@ function solution(lines) {
     
     const all = getLineText(min,max)
     
-    console.log(all)
     
-    const [line1,line2,line3] = lines.map(([s,e]) => {
+    const lineStr = lines.map(([s,e]) => {
         return getLineText(s,e)
     })
     
-    return [line1,line2,line3];
+    let cnt = 0;
+    all.forEach((line) => {
+        const duplicationLength = lineStr.filter(item => item.includes(line)).length;
+        if(duplicationLength > 1) cnt++
+    })
+    
+    return cnt;
 }
 
 const getLineText = (min,max) => {
