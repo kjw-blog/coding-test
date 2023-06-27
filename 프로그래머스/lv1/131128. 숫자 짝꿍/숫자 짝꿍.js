@@ -20,5 +20,5 @@ function solution(X, Y) {
         text = '0'
     }
     
-    return  text ? text : '-1';
+    return text
 }
